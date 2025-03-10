@@ -7,7 +7,7 @@ export const generateToken = (user, message, statusCode, res) => {
   }
 
   const token = user.generateJsonWebToken();
-
+  console.log("Generated Token:", token);
   // Ensure COOKIE_EXPIRES is valid
   const cookieExpireDays = Number(process.env.COOKIE_EXPIRES) || 7;
 
