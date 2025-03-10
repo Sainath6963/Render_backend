@@ -16,15 +16,22 @@ dotenv.config({ path: "./config/config.env" });
 
 const app = express();
 
-// ✅ Corrected CORS Configuration
 app.use(
   cors({
     origin: [
-      process.env.PORTFOLIO_URL || "http://localhost:3000",
-      process.env.DASHBORD_URL || "http://localhost:3001",
+      "http://localhost:5173",
+      "http://localhost:5174",
+      process.env.PORTFOLIO_URL,
+      process.env.DASHBOARD_URL,
     ],
-    methods: ["GET", "POST", "DELETE", "PUT"], // ✅ Removed extra space in "GET"
+    methods: ["GET", "POST", "PUT", "DELETE"],
+
     credentials: true,
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Access-Control-Allow-Credentials",
+    ],
   })
 );
 
@@ -39,7 +46,6 @@ app.use(
   })
 );
 
-// Routes
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/timeline", timelineRouter);
@@ -47,10 +53,8 @@ app.use("/api/v1/softwareApplications", softwareApplicationRoutes);
 app.use("/api/v1/Skill", skillRoute);
 app.use("/api/v1/projects", projecRoute);
 
-// Database Connection
 dbConnection();
 
-// Error Handling Middleware
 app.use(errorMiddleware);
 
 export default app;
