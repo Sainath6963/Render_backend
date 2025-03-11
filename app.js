@@ -13,8 +13,6 @@ import skillRoute from "./router/skillRoute.js";
 import projecRoute from "./router/projectRouter.js";
 
 dotenv.config({ path: "./config/config.env" });
-console.log("Portfolio", process.env.PORTFOLIO_URL);
-console.log("dashboard:", process.env.DASHBORD_URL);
 
 const app = express();
 
