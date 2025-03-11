@@ -13,8 +13,9 @@ import skillRoute from "./router/skillRoute.js";
 import projecRoute from "./router/projectRouter.js";
 
 dotenv.config({ path: "./config/config.env" });
-console.log("Portfolio", process.env.PORTFOLIO_URL);
-console.log("dashboard:", process.env.DASHBORD_URL);
+console.log("COOKIE", process.env.COOKIE_EXPIRES);
+console.log("KEY:", process.env.JWT_SECRET);
+console.log("NODE ENV:", process.env.NODE_ENV);
 
 const app = express();
 
