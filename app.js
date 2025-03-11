@@ -14,7 +14,7 @@ import projecRoute from "./router/projectRouter.js";
 
 dotenv.config({ path: "./config/config.env" });
 console.log("COOKIE", process.env.COOKIE_EXPIRES);
-console.log("KEY:", process.env.JWT_SECRET);
+console.log("KEY:", process.env.JWT_SECRET_KEY);
 console.log("NODE ENV:", process.env.NODE_ENV);
 
 const app = express();
