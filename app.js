@@ -21,10 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      process.env.PORTFOLIO_URL,
-      "https://sainathdashboard09.netlify.app",
-    ],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
