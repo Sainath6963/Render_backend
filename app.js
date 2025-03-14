@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["*", "*"],
+    origin: "https://sainathdashboard09.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
 
     credentials: true,
