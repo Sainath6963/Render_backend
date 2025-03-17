@@ -20,7 +20,7 @@ console.log("NODE ENV:", process.env.NODE_ENV);
 const app = express();
 app.use((req, res, next) => {
   const allowedOrigins = [
-    "https://portfolio-mern-pink.vercel.app",
+    "https://portfolio-mern-peach.vercel.app",
     "https://sainathdashboard09.netlify.app",
   ];
   const origin = req.headers.origin;
